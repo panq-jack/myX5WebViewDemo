@@ -4,6 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.tencent.smtt.sdk.QbSdk;
+import com.tencent.smtt.sdk.TbsListener;
 
 
 public class APPAplication extends Application {
@@ -13,7 +14,24 @@ public class APPAplication extends Application {
 		// TODO Auto-generated method stub
 		super.onCreate();
 		//搜集本地tbs内核信息并上报服务器，服务器返回结果决定使用哪个内核。
-		
+
+		QbSdk.setTbsListener(new TbsListener() {
+			@Override
+			public void onDownloadFinish(int i) {
+				Log.d("ppp", "onDownloadFinish");
+			}
+
+			@Override
+			public void onInstallFinish(int i) {
+				Log.d("ppp", "onInstallFinish");
+			}
+
+			@Override
+			public void onDownloadProgress(int i) {
+				Log.d("ppp", "onDownloadProgress : "+i);
+			}
+		});
+
 		QbSdk.PreInitCallback cb = new QbSdk.PreInitCallback() {
 			
 			@Override

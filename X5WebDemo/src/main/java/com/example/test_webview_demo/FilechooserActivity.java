@@ -13,7 +13,7 @@ import com.tencent.smtt.sdk.WebChromeClient;
 public class FilechooserActivity extends Activity {
 
     /**
-     * 用于展示在web端<input type=text>的标签被选择之后，文件选择器的制作和生成
+     * 用于展示在web端<input type=file>的标签被选择之后，文件选择器的制作和生成
      */
 
     private X5WebView webView;
@@ -54,7 +54,7 @@ public class FilechooserActivity extends Activity {
             public boolean onShowFileChooser(com.tencent.smtt.sdk.WebView webView,
                                              ValueCallback<Uri[]> filePathCallback,
                                              WebChromeClient.FileChooserParams fileChooserParams) {
-                Log.i("test", "openFileChooser 4:" + filePathCallback.toString());
+                Log.d("ppp", "openFileChooser 4:" + filePathCallback.toString());
                 FilechooserActivity.this.uploadFiles = filePathCallback;
                 openFileChooseProcess();
                 return true;

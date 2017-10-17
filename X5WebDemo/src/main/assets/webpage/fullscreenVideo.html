@@ -16,7 +16,7 @@
 </head>
 <body>
         <video style="width:100%; height: auto;" controls>
-           <source src=http://59.152.16.209/65667AC65D4C82E6C5473246A/030011010059E2FE12554719B69A66CEAE9B14-CFE6-6A65-19E5-F574A313AE58.mp4?ccode=0502&duration=70&expire=18000&psid=caf46334f58fb5993247f0e69470e3b4&ups_client_netip=124.15.247.138&ups_ts=1508072103&ups_userid=&utid=IrMtEg6ctVkCAXwP9jfRCJ8%2F&vid=XMzA4NDgwNTUyMA%3D%3D&vkey=A5eacb789d6de6314b648af17df88559f>
+           <source src="http://1251412368.vod2.myqcloud.com/vod1251412368/9031868222878419952/playlist.f9.mp4"  type="video/mp4">
         </video>
         <div style="width:100%;height: 25px;"></div>
         <button onclick="click_x5()"  style="width:50%;height: 50px; float: left"> x5模式全屏</button>
@@ -27,6 +27,10 @@
         <div class="line"></div>
         <button onclick="click_PageVideo()"  style="width:50%;height: 50px; float: left"> 页面内全屏</button>
         <button onclick="click_normal()"  style="width:50%;height: 50px;"> 关闭页面内全屏</button>
+        <p> 测试sys webview 全屏功能</p>
+        <div class="line"></div>
+        <button onclick="click_EnterFullScreen()"  style="width:50%;height: 50px; float: left"> 模拟启动全屏</button>
+        <button onclick="click_ExitFullScreen()"  style="width:50%;height: 50px;"> 模拟退出全屏</button>
 </body>
 
 
@@ -46,6 +50,16 @@
     }
     function click_PageVideo(){
         Android.onPageVideoClicked();
+        location.reload(false);
+    }
+
+    function click_EnterFullScreen(){
+        Android.onEnterFullScreen();
+        location.reload(false);
+    }
+
+    function click_ExitFullScreen(){
+        Android.onExitFullScreen();
         location.reload(false);
     }
 </script>
